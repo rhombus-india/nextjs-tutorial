@@ -1,5 +1,4 @@
 const fetchData = async () => {
-    'use server'
     console.log("Called from page")
     const data  = await fetch('https://fluffy-space-waddle-x5pgjv6wvg5c6j6g-3001.app.github.dev')
     const posts = await data.json()

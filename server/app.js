@@ -17,4 +17,21 @@ app.get("/", async (req,res) => {
   }])
 })
 
+
+var users = [{
+  'id' : 1,
+  'name' : 'john'
+}]
+app.get('/users', (req,res) => {
+  console.log(users)
+  res.send(users)
+})
+
+app.post('/users', (req,res) => {
+  const data = res.body;
+  console.log(data)
+  users.push(data)
+  res.send("Data Update").status(201)
+})
+
 app.listen(3001,() =>  console.log('Server is listening'))
